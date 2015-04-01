@@ -25,7 +25,7 @@ class WPQPI_Settings_Page {
 			<?php screen_icon(); ?>
 			<h2>Quick Page Importer</h2>
 		</div><?php
-		
+		submit_button();
 	}
 	
 	public function file_picker_callback() { ?>
