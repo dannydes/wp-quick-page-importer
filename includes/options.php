@@ -29,7 +29,8 @@ class WPQPI_Settings_Page {
 	}
 	
 	public function file_picker_callback() { ?>
-		<input type="file" name="file">
+		<label for="file">Upload file: </label>
+		<input type="file" id="file" name="file">
 		<?php
 	}
 	
