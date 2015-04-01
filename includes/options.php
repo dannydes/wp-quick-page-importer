@@ -24,8 +24,10 @@ class WPQPI_Settings_Page {
 		<div class="wrap">
 			<?php screen_icon(); ?>
 			<h2>Quick Page Importer</h2>
+			<form method="post" action="options.php"><?php
+				submit_button();
+			?></form>
 		</div><?php
-		submit_button();
 	}
 	
 	public function file_picker_callback() { ?>
