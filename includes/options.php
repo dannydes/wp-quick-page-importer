@@ -28,6 +28,11 @@ class WPQPI_Settings_Page {
 		
 	}
 	
+	public function file_picker_callback() { ?>
+		<input type="file" name="file">
+		<?php
+	}
+	
 }
 
 if ( is_admin() ) {
