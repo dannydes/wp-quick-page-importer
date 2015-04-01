@@ -34,6 +34,10 @@ class WPQPI_Settings_Page {
 		<?php
 	}
 	
+	public function page_init() {
+		
+	}
+	
 }
 
 if ( is_admin() ) {
