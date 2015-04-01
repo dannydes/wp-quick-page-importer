@@ -26,26 +26,31 @@ class WPQPI_Settings_Page {
 				);
 	}
 	
-	public function create_admin_page() {
-		$this->options = get_option( 'wpqpi_setting' ); ?>
+	public function create_admin_page() { ?>
+		<style>
+			#file {
+				display: none;
+			}
+		</style>
 		<div class="wrap">
 			<?php screen_icon(); ?>
 			<h2>Quick Page Importer</h2>
-			<form method="post" action="options.php"><?php
+			<form method="post" action="options.php">
+				<a id="file_link" class="browser button button-hero" href="#">Upload file</a>
+				<input id="file" type="file" name="file"><?php
 				submit_button();
 			?></form>
-		</div><?php
+		</div>
+		<script>
+			(function ( $ ) {
+				$( '#file_link' ).click(function () {
+					$( '#file' ).click();
+				});
+			})( jQuery );
+		</script><?php
 	}
 	
-	public function file_picker_callback() { ?>
-		<label for="file">Upload file: </label>
-		<input type="file" id="file" name="file">
-		<?php
-	}
-	
-	public function page_init() {
-		
-	}
+	public function page_init() { }
 	
 }
 
