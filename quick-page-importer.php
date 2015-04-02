@@ -27,12 +27,8 @@ class WPQPI_Settings_Page {
 				);
 	}
 	
-	public function create_admin_page() { ?>
-		<style>
-			#file {
-				display: none;
-			}
-		</style>
+	public function create_admin_page() {
+		wp_enqueue_script( 'wpqpi_style', plugin_dir_url( __FILE__ ) . 'style.css' ); ?>
 		<div class="wrap">
 			<?php screen_icon(); ?>
 			<h2>Quick Page Importer</h2>
@@ -41,14 +37,8 @@ class WPQPI_Settings_Page {
 				<input id="file" type="file" name="file"><?php
 				submit_button();
 			?></form>
-		</div>
-		<script>
-			(function ( $ ) {
-				$( '#file_link' ).click(function () {
-					$( '#file' ).click();
-				});
-			})( jQuery );
-		</script><?php
+		</div><?php
+		wp_enqueue_script( 'wpqpi_script', plugin_dir_url( __FILE__ ) . 'script.js', array( 'jquery' ), '0.1', true );
 	}
 	
 	public function page_init() { }
