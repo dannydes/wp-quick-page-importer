@@ -14,7 +14,6 @@ class WPQPI_Settings_Page {
 	
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
-		add_action( 'admin_init', array( $this, 'page_init' ) );
 	}
 	
 	public function add_plugin_page() {
@@ -40,8 +39,6 @@ class WPQPI_Settings_Page {
 		</div><?php
 		wp_enqueue_script( 'wpqpi_script', plugin_dir_url( __FILE__ ) . 'script.js', array( 'jquery' ), '0.1', true );
 	}
-	
-	public function page_init() { }
 	
 }
 
