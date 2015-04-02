@@ -11,7 +11,7 @@ if ( $_FILES['file']['type'] !== 'application/zip' &&
 
 $zip_archive = new ZipArchive;
 $res = $zip_archive->open( $_FILES['file']['tmp_name'] );
-if ($res === true) {
+if ( $res === true ) {
 	$filename = $_FILES['file']['name'];
 	$zip_archive->extractTo( wpqpi_get_wp_path() . substr( $filename, 0, strlen( $filename ) - 4 ) );
 	$zip_archive->close();
