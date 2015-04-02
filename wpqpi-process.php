@@ -1,10 +1,14 @@
 <?php
 
+if ( ! isset( $_POST['submit'] ) ) {
+	die('dizastru');
+}
+
 $filename = $_FILES['file']['name'];
 
 if ( $_FILES['file']['type'] !== 'application/zip' &&
 		$_FILES['file']['type'] !== 'application/octet-stream' ) {
-	die 'Xejn sew :(';
+	die('Xejn sew :(');
 }
 
 //Taken from http://stackoverflow.com/questions/2354633/wordpress-root-directory-path
