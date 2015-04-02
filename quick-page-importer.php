@@ -5,6 +5,7 @@
  * Description: Imports HTML pages into a subdirectory without integrating the page with the existing WP site.
  * Version: 0.1
  * Author: Daniel Desira
+ * License: GNU GPL
  */
 
 class WPQPI_Settings_Page {
