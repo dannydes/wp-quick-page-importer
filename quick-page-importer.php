@@ -26,8 +26,12 @@ class WPQPI_Settings_Page {
 				);
 	}
 	
-	public function create_admin_page() {
-		wp_enqueue_script( 'wpqpi_style', plugin_dir_url( __FILE__ ) . 'style.css' ); ?>
+	public function create_admin_page() { ?>
+		<style>
+		#file {
+			display: none;
+		}
+		</style>
 		<div class="wrap">
 			<?php screen_icon(); ?>
 			<h2>Quick Page Importer</h2>
