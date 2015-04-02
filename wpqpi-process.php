@@ -4,17 +4,16 @@ if ( ! isset( $_POST['submit'] ) ) {
 	die('dizastru');
 }
 
-$filename = $_FILES['file']['name'];
-
 if ( $_FILES['file']['type'] !== 'application/zip' &&
 		$_FILES['file']['type'] !== 'application/octet-stream' ) {
 	die('Xejn sew :(');
 }
 
 $zip_archive = new ZipArchive;
-$res = $zip_archive->open( $filename );
+$res = $zip_archive->open( $_FILES['file']['tmp_name'] );
 if ($res === true) {
-	$zip_archive->extractTo( wpqpi_get_wp_path() . $filename );
+	$filename = $_FILES['file']['name'];
+	$zip_archive->extractTo( wpqpi_get_wp_path() . substr( $filename, 0, strlen( $filename ) - 4 ) );
 	$zip_archive->close();
 } else {
 	echo 'ujj ma hadmitx :\'(';
