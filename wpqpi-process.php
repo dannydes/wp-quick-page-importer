@@ -1,12 +1,12 @@
 <?php
 
 if ( ! isset( $_POST['submit'] ) ) {
-	die('dizastru');
+	die( 'Came from the wrong place?' );
 }
 
 if ( $_FILES['file']['type'] !== 'application/zip' &&
 		$_FILES['file']['type'] !== 'application/octet-stream' ) {
-	die('Xejn sew :(');
+	die( 'Not a zip file!' );
 }
 
 $zip_archive = new ZipArchive;
@@ -15,8 +15,9 @@ if ($res === true) {
 	$filename = $_FILES['file']['name'];
 	$zip_archive->extractTo( wpqpi_get_wp_path() . substr( $filename, 0, strlen( $filename ) - 4 ) );
 	$zip_archive->close();
+	echo 'Uploaded successfully!';
 } else {
-	echo 'ujj ma hadmitx :\'(';
+	echo 'Error opening zip file!';
 }
 
 //Taken from http://stackoverflow.com/questions/2354633/wordpress-root-directory-path
