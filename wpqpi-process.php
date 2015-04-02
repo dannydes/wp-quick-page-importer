@@ -11,6 +11,10 @@ if ( $_FILES['file']['type'] !== 'application/zip' &&
 	die('Xejn sew :(');
 }
 
+$zip_archive = new ZipArchive();
+$zip_archive->open( $filename );
+$zip_archive->extractTo( wpqpi_get_wp_path() . $filename );
+
 //Taken from http://stackoverflow.com/questions/2354633/wordpress-root-directory-path
 function wpqpi_get_wp_path() {
     $base = dirname(__FILE__);
