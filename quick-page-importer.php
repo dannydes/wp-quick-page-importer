@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Quick Page Importer
- * Description: Imports HTML pages into a subdirectory without integrating the page with the existing WP site.
+ * Description: Imports HTML pages into a subdirectory without integrating the page with the existing WP site. Likely to be useful if you do not have FTP access to your site and wish to add a sub-site that doesn't run on WordPress.
  * Version: 0.1
  * Author: Daniel Desira
  * License: GNU GPL
